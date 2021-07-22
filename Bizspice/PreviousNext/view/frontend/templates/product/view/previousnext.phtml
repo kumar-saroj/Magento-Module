@@ -1,0 +1,104 @@
+<?php
+     $productId = $block->getProduct()->getId();
+     $_product = $block->getProduct();
+     $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+     $customerSession = $objectManager->get('Magento\Customer\Model\Session');
+     
+     $customerData = $customerSession->getCustomer()->getData();
+
+     //print_r($customerData);
+     //$block->getUrl('checkout/cart/'); 
+?>
+<div class="order-sample"><a href="javascript:void(0)" data-id="<?php echo $productId; ?>" class="action towishlist calltoaction"><span>ORDER MATERIAL</span></a></div>
+
+<div class="sampleform">
+  
+   <?php if($customerSession->isLoggedIn()) { ?>
+   <?php if($customerData['custtype'] == 'Distributor' || $customerData['custtype'] == 'Reseller' || $customerData['custtype'] == 'Contractor' ) { ?>
+    <form action="/ordermaterial/index/test" method="post">
+    <p>
+        <input type="hidden" name="pname" id="pname" value="<?php echo $_product->getName();?>" readonly >
+    </p>
+    <p>
+        <input type="hidden" name="pprice" id="pprice" value="<?php echo number_format($_product->getPrice(), 2, '.', ',');?>" readonly >
+    </p>
+    <p>
+        <input type="hidden" name="fname" id="fname" placeholder="First Name"  value="<?php echo $customerData['firstname']; ?>" readonly>
+    </p>
+    <p>
+        <input type="hidden" name="lname" id="lname" placeholder="Last Name" value="<?php echo $customerData['lastname']; ?>" readonly>
+    </p>
+    <p>
+        <input type="hidden" name="email" id="email" placeholder="Email" value="<?php echo $customerData['email']; ?>" readonly>
+    </p>
+    <p>
+        <input type="hidden" name="contactno" id="contactno" placeholder="Contact No." value="<?php echo $customerData['mobile']; ?>" readonly >
+    </p>
+    <p>
+        <label>Quantity</label><br>
+        <input type="number" name="qunty" id="qunty" required>
+    </p>
+    <p>
+        <input type="submit" class="getsample" name="send" id="send" value="Submit" >
+    </p>
+    </form>
+    <?php } else { ?>
+    <p style="color:#f00;font-size:12px; text-transform:uppercase; font-weight:bold;">You don't have permission to order this!</p>
+    <?php } ?>
+    <?php } else { ?>
+    <p style="font-size:17px;">Login <a href="<?= $block->escapeUrl($block->getUrl('customer/account/login')); ?>">here.</a></p>
+   <?php } ?>
+</div>
+
+<style>
+    .sampleform {
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px dotted #ccc;
+    display:none;
+    margin-bottom: 15px;
+}
+.getsample {
+    background: #e2e2e2;
+    border: 0;
+    padding:11px 35px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.order-sample a {
+    background: #6abc45;
+    color: #fff !important;
+    padding: 12px 6px;
+    font-size: 15px;
+    text-decoration:none !important;
+}
+.order-sample a:before {
+    content: '\e87f';
+    font-family: 'porto-icons';
+    margin-right: 7px;
+    font-size: 16px;
+}
+.order-sample {
+    margin-top: 15px;
+    margin-bottom:25px;
+}
+input#qunty {
+    width: 50%;
+    margin-top: 10px;
+    outline:none;
+}
+</style>
+
+<script type="text/javascript">
+    require([
+        'jquery',
+        'jquery/ui'
+    ], function($){
+        jQuery('.calltoaction').click(function() {
+           jQuery('.sampleform').slideToggle();
+        });
+    });
+    
+
+    
+</script>

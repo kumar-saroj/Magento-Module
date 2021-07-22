@@ -1,0 +1,8 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+                <body>
+                <referenceContainer name="product.info.main">
+                <block class="Magento\Catalog\Block\Product\View" name="product.info.previousnext" template="Bizspice_PreviousNext::product/view/previousnext.phtml" cacheable="false" after="product.info.price" />   
+                </referenceContainer>    
+                <referenceBlock name="view.addto.compare" remove="true" />
+                </body>
+</page>
