@@ -1,0 +1,148 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->create('Magento\Customer\Model\Session');
+
+
+if ($customerSession->isLoggedIn()) {
+    $customerSession->getCustomerId();  // get Customer Id
+    $customerSession->getCustomerGroupId();
+    $customerSession->getCustomer();
+    $customerSession->getCustomerData();
+
+    //echo $customerSession->getCustomer()->getName();  // get  Full Name
+   //echo $customerSession->getCustomer()->getEmail(); // get Email
+   $customerId = $customerSession->getCustomer()->getId();
+
+ 
+   $customerRepository = $objectManager->get('Magento\Customer\Api\CustomerRepositoryInterface');
+   $customer = $customerRepository->getById($customerId);
+
+   
+   
+   ?>
+     <table class="table table-striped">
+        <tr>
+            <?php if($customer->getCustomAttribute('mobile')) : ?>
+            <th>Mobile No.</th>
+            <td><?php echo $customer->getCustomAttribute('mobile')->getValue(); ?></td>
+            <?php endif; ?>
+            <?php if($customer->getCustomAttribute('custtype')) : ?>
+            <th>Type</th>
+            <td><?php echo $customer->getCustomAttribute('custtype')->getValue(); ?></td>
+            <?php endif; ?>
+        </tr>
+        <tr>
+            <?php if($customer->getCustomAttribute('companyname')) : ?>
+            <th>Name of Company</th>
+            <td><?php echo $customer->getCustomAttribute('companyname')->getValue(); ?></td>
+            <?php endif; ?>
+            <?php if($customer->getCustomAttribute('businesswebsite')) : ?>
+            <th>Business Website</th>
+            <td><?php echo $customer->getCustomAttribute('businesswebsite')->getValue(); ?></td>
+            <?php endif; ?>
+        </tr>
+
+        <tr>
+        <?php if($customer->getCustomAttribute('industry')) : ?>
+            <th>Industry</th>
+            <td><?php echo $customer->getCustomAttribute('industry')->getValue(); ?></td>
+            <?php endif; ?>
+            <?php if($customer->getCustomAttribute('noofyears')) : ?>
+            <th>No of years in service</th>
+            <td><?php echo  $customer->getCustomAttribute('noofyears')->getValue(); ?></td>
+            <?php endif; ?>
+        </tr>
+        <tr>
+        <?php if($customer->getCustomAttribute('noofemployee')) : ?>
+            <th>No of employees</th>
+            <td><?php echo  $customer->getCustomAttribute('noofemployee')->getValue(); ?></td>
+            <?php endif; ?>
+            <?php if($customer->getCustomAttribute('lastfy')) : ?>
+            <th>Last FY</th>
+            <td><?php echo  $customer->getCustomAttribute('lastfy')->getValue(); ?></td>
+            <?php endif; ?>
+        </tr>
+        <tr>
+        <?php if($customer->getCustomAttribute('previoustothat')) : ?>
+            <th>Previous to that</th>
+            <td><?php echo  $customer->getCustomAttribute('previoustothat')->getValue(); ?></td>
+            <?php endif; ?>
+            <?php if($customer->getCustomAttribute('address')) : ?>
+            <th>Address</th>
+            <td><?php echo  $customer->getCustomAttribute('address')->getValue(); ?></td>
+            <?php endif; ?>
+        </tr>
+        <tr>
+        <?php if($customer->getCustomAttribute('city')) : ?>
+            <th>City</th>
+            <td><?php echo  $customer->getCustomAttribute('city')->getValue(); ?></td>
+            <?php endif; ?>
+            <?php if($customer->getCustomAttribute('state')) : ?>
+            <th>State</th>
+            <td><?php echo  $customer->getCustomAttribute('state')->getValue(); ?></td>
+            <?php endif; ?>
+        </tr>
+        <tr>
+        <?php if($customer->getCustomAttribute('pincode')) : ?>
+            <th>Pincode</th>
+            <td><?php echo  $customer->getCustomAttribute('pincode')->getValue(); ?></td>
+            <?php endif; ?>
+            <?php if($customer->getCustomAttribute('typeofcompany')) : ?>
+            <th>Type of Company</th>
+            <td><?php echo  $customer->getCustomAttribute('typeofcompany')->getValue(); ?></td>
+            <?php endif; ?>
+        </tr>
+        <tr>
+        <?php if($customer->getCustomAttribute('msme')) : ?>
+            <th>MSME</th>
+            <td><?php echo  $customer->getCustomAttribute('msme')->getValue(); ?></td>
+            <?php endif; ?>
+            <?php if($customer->getCustomAttribute('msmecertificate')) : ?>
+            <th>MSME Declaration/ Certificate No.</th>
+            <td><?php echo  $customer->getCustomAttribute('msmecertificate')->getValue(); ?></td>
+            <?php endif; ?>
+        </tr>
+        <tr>
+        <?php if($customer->getCustomAttribute('gstno')) : ?>
+            <th>GST No.</th>
+            <td><?php echo  $customer->getCustomAttribute('gstno')->getValue(); ?></td>
+            <?php endif; ?>
+            <?php if($customer->getCustomAttribute('panno')) : ?>
+            <th>PAN No.</th>
+            <td><?php echo  $customer->getCustomAttribute('panno')->getValue(); ?></td>
+            <?php endif; ?>
+        </tr>
+        <tr>
+        <?php if($customer->getCustomAttribute('bankname')) : ?>
+            <th>Bank Name</th>
+            <td><?php echo  $customer->getCustomAttribute('bankname')->getValue(); ?></td>
+            <?php endif; ?>
+            <?php if($customer->getCustomAttribute('branchadress')) : ?>
+            <th>Branch Address</th>
+            <td><?php echo  $customer->getCustomAttribute('branchadress')->getValue(); ?></td>
+            <?php endif; ?>
+        </tr>
+        <tr>
+        <?php if($customer->getCustomAttribute('branchcode')) : ?>
+            <th>Branch Code</th>
+            <td><?php echo  $customer->getCustomAttribute('branchcode')->getValue(); ?></td>
+            <?php endif; ?>
+            <?php if($customer->getCustomAttribute('accno')) : ?>
+            <th>Account Number</th>
+            <td><?php echo  $customer->getCustomAttribute('accno')->getValue(); ?></td>
+            <?php endif; ?>
+        </tr>
+        <tr>
+        <?php if($customer->getCustomAttribute('ifsccode')) : ?>
+            <th>IFSC Code</th>
+            <td><?php echo  $customer->getCustomAttribute('ifsccode')->getValue(); ?></td>
+            <?php endif; ?>
+            <?php if($customer->getCustomAttribute('micrno')) : ?>
+            <th>MICR No.</th>
+            <td><?php echo  $customer->getCustomAttribute('micrno')->getValue(); ?></td>
+            <?php endif; ?>
+        </tr>
+     </table>
+   <?php
+}
+?>

@@ -1,0 +1,290 @@
+<div class="field mobile required">
+    <label class="label" for="mobile">
+      <span><?= $block->escapeHtml(__('Mobile Number')) ?></span>
+    </label>
+    <div class="control">
+       <input type="text" name="mobile" id="mobile" value="" title="<?= $block->escapeHtmlAttr(__('Mobile Number')) ?>" class="input-text" data-validate="{required:true}">
+    </div>
+</div>
+
+<div class="field custtype required">
+    <label class="label" for="custtype">
+      <span><?= $block->escapeHtml(__('Customer Type')) ?></span>
+    </label>
+    <div class="control">
+       <select name="custtype" id="custtype" class="input-text" data-validate="{required:true}">
+          <option value="" selected="selected">- Select -</option>
+          <option value="Brand">Brand</option>
+          <option value="Distributor">Distributor</option>
+          <option value="Reseller">Reseller</option>
+          <option value="Contractor">Contractor</option>
+          <option value="Professional">Professional</option>
+       </select>
+    </div>
+</div>
+<div class="otherfields hideDiv" style="display:none">
+  <div class="field">   
+     <label class="label" for="companyname">
+      <span><?= $block->escapeHtml(__('Name of Company')) ?></span>
+    </label>
+      <div class="control">
+        <input type="text" name="companyname" id="companyname" value="" title="<?= $block->escapeHtmlAttr(__('Name of Company')) ?>" class="input-text">
+      </div>
+  </div>
+
+  <div class="field">   
+      <label class="label" for="businesswebsite">
+        <span><?= $block->escapeHtml(__('Business Website')) ?></span>
+      </label>
+        <div class="control">
+          <input type="text" name="businesswebsite" id="businesswebsite" value="" title="<?= $block->escapeHtmlAttr(__('Business Website')) ?>" class="input-text">
+        </div>
+  </div>
+
+  <div class="field">   
+      <label class="label" for="industry">
+        <span><?= $block->escapeHtml(__('Industry')) ?></span>
+      </label>
+        <div class="control">
+        <select name="industry" id="industry" class="input-text">
+          <option value="" selected="selected">- Select -</option>
+          <option value="Aerospace">Aerospace</option>
+          <option value="Transport">Transport</option>
+          <option value="Computer">Computer</option>
+          <option value="Telecommunication">Telecommunication</option>
+          <option value="Agriculture">Agriculture</option>
+          <option value="Construction">Construction</option>
+          <option value="Education">Education</option>
+          <option value="Pharmaceutical">Pharmaceutical</option>
+          <option value="Food">Food</option>
+          <option value="Health care">Health care</option>
+          <option value="Hospitality">Hospitality</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="News Media">News Media</option>
+          <option value="Energy">Energy</option>
+          <option value="Manufacturing">Manufacturing</option>
+          <option value="Music">Music</option>
+          <option value="Mining">Mining</option>
+          <option value="Worldwide">Worldwide</option>
+          <option value="Electronics">Electronics</option>
+       </select>
+        </div>
+  </div>
+
+  <div class="field">   
+      <label class="label" for="noofyears">
+        <span><?= $block->escapeHtml(__('No of years in service')) ?></span>
+      </label>
+        <div class="control">
+          <input type="text" name="noofyears" id="noofyears" value="" title="<?= $block->escapeHtmlAttr(__('No of years in service')) ?>" class="input-text">
+        </div>
+  </div>
+
+  <div class="field">   
+      <label class="label" for="noofemployee">
+        <span><?= $block->escapeHtml(__('No of employees')) ?></span>
+      </label>
+        <div class="control">
+          <input type="text" name="noofemployee" id="noofemployee" value="" title="<?= $block->escapeHtmlAttr(__('No of employees')) ?>" class="input-text">
+        </div>
+  </div>
+  <h3>Sales in previous 2 years </h3>
+  <div class="field">   
+      <label class="label" for="lastfy">
+        <span><?= $block->escapeHtml(__('Last FY')) ?></span>
+      </label>
+        <div class="control">
+          <input type="text" name="lastfy" id="lastfy" value="" title="<?= $block->escapeHtmlAttr(__('Last FY')) ?>" class="input-text">
+        </div>
+  </div>
+  <div class="field">   
+      <label class="label" for="previoustothat">
+        <span><?= $block->escapeHtml(__('Previous to that')) ?></span>
+      </label>
+        <div class="control">
+          <input type="text" name="previoustothat" id="previoustothat" value="" title="<?= $block->escapeHtmlAttr(__('Previous to that')) ?>" class="input-text">
+        </div>
+  </div>
+  <h3>Address </h3>
+  <div class="field">   
+      <label class="label" for="address">
+        <span><?= $block->escapeHtml(__('Address')) ?></span>
+      </label>
+        <div class="control">
+          <textarea name="address" id="address" title="<?= $block->escapeHtmlAttr(__('Previous to that')) ?>" class="input-text"></textarea>
+        </div>
+  </div>
+  <div class="field">   
+      <label class="label" for="city">
+        <span><?= $block->escapeHtml(__('City')) ?></span>
+      </label>
+        <div class="control">
+          <input type="text" name="city" id="city" value="" title="<?= $block->escapeHtmlAttr(__('City')) ?>" class="input-text">
+        </div>
+  </div>
+
+  <div class="field">   
+      <label class="label" for="state">
+        <span><?= $block->escapeHtml(__('State')) ?></span>
+      </label>
+        <div class="control">
+          <input type="text" name="state" id="state" value="" title="<?= $block->escapeHtmlAttr(__('State')) ?>" class="input-text">
+        </div>
+  </div>
+  <div class="field">   
+      <label class="label" for="pincode">
+        <span><?= $block->escapeHtml(__('Pincode')) ?></span>
+      </label>
+        <div class="control">
+          <input type="text" name="pincode" id="pincode" value="" title="<?= $block->escapeHtmlAttr(__('Pincode')) ?>" class="input-text">
+        </div>
+  </div>
+  <h3>Type of Company</h3>
+  <div class="field">
+    <label class="label" for="typeofcompany">
+      <span><?= $block->escapeHtml(__('Type of Company')) ?></span>
+    </label>
+    <div class="control">
+       <select name="typeofcompany" id="typeofcompany" class="input-text">
+          <option value="" selected="selected">- Select -</option>
+          <option value="Pvt Ltd">Pvt Ltd</option>
+          <option value="Public Ltd">Public Ltd</option>
+          <option value="Government">Government</option>
+          <option value="PSU">PSU</option>
+          <option value="Propetriership">Propetriership</option>
+          <option value="Partnership">Partnership</option>
+          <option value="Cooperative">Cooperative</option>
+          <option value="Joint Sector">Joint Sector</option>
+          <option value="Others">Others</option>
+       </select>
+    </div>
+</div>
+<div class="field">
+    <label class="label" for="msme">
+      <span><?= $block->escapeHtml(__('MSME')) ?></span>
+    </label>
+    <div class="control">
+       <select name="msme" id="msme" class="input-text">
+          <option value="" selected="selected">- Select -</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+         
+       </select>
+    </div>
+</div>
+
+<div class="field">   
+      <label class="label" for="msmecertificate">
+        <span><?= $block->escapeHtml(__('MSME Declaration/ Certificate No.')) ?></span>
+      </label>
+        <div class="control">
+          <input type="text" name="msmecertificate" id="msmecertificate" value="" title="<?= $block->escapeHtmlAttr(__('MSME Declaration/ Certificate')) ?>" class="input-text">
+        </div>
+  </div>
+  <div class="field">   
+      <label class="label" for="gstno">
+        <span><?= $block->escapeHtml(__('GST No.')) ?></span>
+      </label>
+        <div class="control">
+          <input type="text" name="gstno" id="gstno" value="" title="<?= $block->escapeHtmlAttr(__('GST No.')) ?>" class="input-text">
+        </div>
+  </div>
+  
+
+  <div class="field">   
+      <label class="label" for="panno">
+        <span><?= $block->escapeHtml(__('PAN No.')) ?></span>
+      </label>
+        <div class="control">
+          <input type="text" name="panno" id="panno" value="" title="<?= $block->escapeHtmlAttr(__('PAN No.')) ?>" class="input-text">
+        </div>
+  </div>
+
+  <h3>Bank Details</h3>
+  <div class="field">   
+      <label class="label" for="bankname">
+        <span><?= $block->escapeHtml(__('Bank Name')) ?></span>
+      </label>
+        <div class="control">
+          <input type="text" name="bankname" id="bankname" value="" title="<?= $block->escapeHtmlAttr(__('Bank Name')) ?>" class="input-text">
+        </div>
+  </div>
+  <div class="field">   
+      <label class="label" for="branchadress">
+        <span><?= $block->escapeHtml(__('Branch Address')) ?></span>
+      </label>
+        <div class="control">
+          <textarea name="branchadress" id="branchadress" title="<?= $block->escapeHtmlAttr(__('Branch Address')) ?>" class="input-text"></textarea>
+        </div>
+  </div>
+
+  <div class="field">   
+      <label class="label" for="branchcode">
+        <span><?= $block->escapeHtml(__('Branch Code')) ?></span>
+      </label>
+        <div class="control">
+          <input type="text" name="branchcode" id="branchcode" value="" title="<?= $block->escapeHtmlAttr(__('Branch Code')) ?>" class="input-text">
+        </div>
+  </div>
+  <div class="field">   
+      <label class="label" for="accno">
+        <span><?= $block->escapeHtml(__('Account Number')) ?></span>
+      </label>
+        <div class="control">
+          <input type="text" name="accno" id="accno" value="" title="<?= $block->escapeHtmlAttr(__('Account Number')) ?>" class="input-text">
+        </div>
+  </div>
+  <div class="field">   
+      <label class="label" for="ifsccode">
+        <span><?= $block->escapeHtml(__('IFSC Code')) ?></span>
+      </label>
+        <div class="control">
+          <input type="text" name="ifsccode" id="ifsccode" value="" title="<?= $block->escapeHtmlAttr(__('IFSC Code')) ?>" class="input-text">
+        </div>
+  </div>
+  
+  <div class="field">   
+      <label class="label" for="micrno">
+        <span><?= $block->escapeHtml(__('MICR No.')) ?></span>
+      </label>
+        <div class="control">
+          <input type="text" name="micrno" id="micrno" value="" title="<?= $block->escapeHtmlAttr(__('MICR No.')) ?>" class="input-text">
+        </div>
+  </div>
+
+</div>
+<script type="text/javascript">
+require(['jquery', 'jquery/ui'], function($){
+  jQuery(document).ready( function() {
+    jQuery('#custtypes').click(function() {
+      var cvalue = jQuery(this).val();
+        if(cvalue == 'Distributor' || cvalue == 'Reseller' || cvalue == 'Contractor')
+        {
+          jQuery('.otherfields').removeClass('hideDiv');
+        }
+        else{
+          jQuery('.otherfields').addClass('hideDiv');
+        }
+    });
+  });
+});
+</script>
+<style>
+  .hideDiv{
+    display:none;
+  }
+  .otherfields .field label {
+    margin: 0 0 8px;
+    display: inline-block;
+    font-weight:bold;
+  }
+  .otherfields .field {
+    margin-bottom: 10px;
+}
+.otherfields h3 {
+    background: #ccc;
+    padding: 7px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+</style>
